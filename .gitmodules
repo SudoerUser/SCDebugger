@@ -1,0 +1,6 @@
+[submodule "core/linenoise"]
+	path = core/linenoise
+	url = https://github.com/antirez/linenoise
+[submodule "core/libelfin"]
+	path = core/libelfin
+	url = https://github.com/aclements/libelfin
