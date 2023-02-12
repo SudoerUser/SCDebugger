@@ -1,6 +1,7 @@
 #include <vector>
 #include <sys/ptrace.h>
 #include <sys/wait.h>
+#include <sys/personality.h>
 #include <unistd.h>
 #include <sstream>
 #include <iostream>
@@ -9,7 +10,7 @@
 #include "debugger.hpp"
 
 
-
+//SIMPLE COOL DEBUGGER
 
 
 void execute_debugee (const std::string& prog_name) {
@@ -31,6 +32,7 @@ int main(int argc, char* argv[]) {
     auto pid = fork();
     if (pid == 0) {
         //child
+        personality(ADDR_NO_RANDOMIZE);
         execute_debugee(prog);
 
     }
